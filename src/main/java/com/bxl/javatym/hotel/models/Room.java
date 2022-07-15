@@ -6,6 +6,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.awt.print.Book;
+import java.util.List;
 
 @Entity
 @Table(name = "room")
@@ -31,4 +33,7 @@ public class Room {
     private String capacity;
     @Column(name = "price", columnDefinition = "DECIMAL(7,2)")
     private double price;
+
+    @OneToMany(mappedBy = "room")
+    private List<Booking> bookings;
 }

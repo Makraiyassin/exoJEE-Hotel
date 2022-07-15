@@ -23,9 +23,12 @@ public class Booking {
     @Column(name = "booking_id")
     private int id;
 
-    @Column(name = "booking_id")
+    @ManyToOne
+    @JoinColumn(name = "customer_id", foreignKey = @ForeignKey())
     private Customer customer;
-    @Column(name = "booking_id")
+
+    @ManyToOne
+    @JoinColumn(name = "room_id", foreignKey = @ForeignKey())
     private Room room;
 
 }
