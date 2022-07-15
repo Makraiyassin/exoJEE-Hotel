@@ -1,9 +1,6 @@
 package com.bxl.javatym.hotel.models;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import java.awt.print.Book;
@@ -27,7 +24,7 @@ public class Room {
     private int id;
 
     @Column(name = "available")
-    private boolean available;
+    private boolean available = true;
 
     @Column(name = "type")
     private String type;
