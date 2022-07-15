@@ -19,7 +19,7 @@ public class EMFWebListener implements ServletContextListener {
 
     @Override
     public void contextInitialized(ServletContextEvent sce) {
-        factory = Persistence.createEntityManagerFactory("default");
+        factory = Persistence.createEntityManagerFactory("hoteldb");
     }
 
     @Override

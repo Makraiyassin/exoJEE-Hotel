@@ -13,8 +13,8 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @NamedQueries({
-        @NamedQuery(name = "get_all", query = "SELECT r FROM Room r"),
-        @NamedQuery(name = "remove_one", query = "DELETE FROM Room r WHERE r.id = :id")
+        @NamedQuery(name = "r_get_all", query = "SELECT r FROM Room r"),
+        @NamedQuery(name = "r_remove_one", query = "DELETE FROM Room r WHERE r.id = :id")
 })
 public class Room {
 

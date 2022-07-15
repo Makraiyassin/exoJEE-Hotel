@@ -15,8 +15,8 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @NamedQueries({
-        @NamedQuery(name = "get_all", query = "SELECT c FROM Customer c"),
-        @NamedQuery(name = "remove_one", query = "DELETE FROM Customer c WHERE c.id = :id")
+        @NamedQuery(name = "c_get_all", query = "SELECT c FROM Customer c"),
+        @NamedQuery(name = "c_remove_one", query = "DELETE FROM Customer c WHERE c.id = :id")
 })
 public class Customer {
 

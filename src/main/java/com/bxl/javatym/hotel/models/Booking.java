@@ -14,8 +14,8 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @AllArgsConstructor
 @NamedQueries({
-        @NamedQuery(name = "get_all", query = "SELECT b FROM Booking b"),
-        @NamedQuery(name = "remove_one", query = "DELETE FROM Booking b WHERE b.id = :id")
+        @NamedQuery(name = "b_get_all", query = "SELECT b FROM Booking b"),
+        @NamedQuery(name = "b_remove_one", query = "DELETE FROM Booking b WHERE b.id = :id")
 })
 public class Booking {
 
