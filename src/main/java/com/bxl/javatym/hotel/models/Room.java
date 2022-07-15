@@ -25,12 +25,16 @@ public class Room {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "room_id")
     private int id;
+
     @Column(name = "available")
     private boolean available;
+
     @Column(name = "type")
     private String type;
+
     @Column(name = "capacity")
     private String capacity;
+
     @Column(name = "price", columnDefinition = "DECIMAL(7,2)")
     private double price;
 
