@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 
 @Entity
 @Table(name = "booking")
@@ -23,9 +24,17 @@ public class Booking {
     @Column(name = "booking_id")
     private int id;
 
-    @Column(name = "booking_id")
-    private Customer customer;
-    @Column(name = "booking_id")
-    private Room room;
+    @Column(name = "date_begin")
+    private LocalDate beginDate;
 
+    @Column(name = "date_end")
+    private LocalDate endDate;
+
+    @ManyToOne
+    @JoinColumn(name = "customer_id", foreignKey = @ForeignKey())
+    private Customer customer;
+
+    @ManyToOne
+    @JoinColumn(name = "room_id", foreignKey = @ForeignKey())
+    private Room room;
 }
