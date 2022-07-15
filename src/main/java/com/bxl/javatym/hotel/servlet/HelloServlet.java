@@ -1,4 +1,4 @@
-package com.bxl.javatym.hotel;
+package com.bxl.javatym.hotel.servlet;
 
 import java.io.*;
 import javax.servlet.http.*;
