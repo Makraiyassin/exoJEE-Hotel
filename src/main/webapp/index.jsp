@@ -3,15 +3,11 @@
 <html>
 <head>
     <title>Welcome</title>
-    <%@include file="assets/toADD.jsp"%>
+    <%@include file="./assets/toADD.jsp"%>
 </head>
 <body>
 
-<%@include file="assets/navBar.jsp"%>
-
-<h1>fdiezihbfezihbezfihbezihbfihbzef</h1>
-
-
+<%@include file="./assets/navBar.jsp"%>
 
 <div class="card" style="width: 18rem;">
     <img src="https://res.cloudinary.com/hzekpb1cg/image/upload/c_fill,h_581,w_1185,f_auto/s3/public/prod/s3fs-public/Chambre-double.png" class="card-img-top" alt="...">
