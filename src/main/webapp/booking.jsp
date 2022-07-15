@@ -9,11 +9,11 @@
 <html>
 <head>
     <title>Booking</title>
-    <%@include file="WEB-INF/assets/toADD.jsp"%>
+    <%@include file="assets/toADD.jsp"%>
 </head>
 <body>
 
-<%@include file="WEB-INF/assets/navBar.jsp"%>
+<%@include file="assets/navBar.jsp"%>
 
 <div class="input-group mb-3">
     <form action="<%= request.getContextPath() %>/maman" method="post">
@@ -21,9 +21,11 @@
             <label for="formGroupExampleInput" class="form-label">Check-In</label>
             <input type="datetime-local" class="form-control" id="formGroupExampleInput" placeholder="Auto-Increment" name="datein">
         </div>
-        <div class="mb-4">
-            <label for="formGroupExampleInput" class="form-label">Check-Out</label>
-            <input type="datetime-local" class="form-control" id="formGroupExampleInput" placeholder="Auto-Increment" name="dateout">
+        <div class="mb-3">
+            <label for="formGroupExampleInput" class="form-label">Check-In/Check-Out</label>
+            <input type="date" class="form-control" placeholder="Username" aria-label="Username">
+            <span class="input-group-text">@</span>
+            <input type="date" class="form-control" placeholder="Server" aria-label="Server">
         </div>
         <div class="mb-3">
             <label for="formGroupExampleInput" class="form-label">Capacity</label>

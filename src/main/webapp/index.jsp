@@ -3,11 +3,13 @@
 <html>
 <head>
     <title>Welcome</title>
-    <%@include file="WEB-INF/assets/toADD.jsp"%>
+    <%@include file="assets/toADD.jsp"%>
 </head>
 <body>
 
-<%@include file="WEB-INF/assets/navBar.jsp"%>
+<%@include file="assets/navBar.jsp"%>
+
+<h1>fdiezihbfezihbezfihbezihbfihbzef</h1>
 
 
 
