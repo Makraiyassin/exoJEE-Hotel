@@ -12,6 +12,6 @@ public class RoomService {
     }
     private RoomService() {}
 
-    private final List<Room> roomList = new ArrayList<>();
+//    private final List<Room> roomList = new ArrayList<>();
 
 }
