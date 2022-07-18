@@ -24,8 +24,10 @@ public class ServletInsertCustomer extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String firstName = request.getParameter("first_name");
         String lastName = request.getParameter("last_name");
+        String email = request.getParameter("email");
+        String password = request.getParameter("password");
 
-        Customer toInsert = new Customer(firstName, lastName);
+        Customer toInsert = new Customer(firstName, lastName, email, password);
         service.insert(toInsert);
 
         response.sendRedirect(request.getContextPath() + "/");

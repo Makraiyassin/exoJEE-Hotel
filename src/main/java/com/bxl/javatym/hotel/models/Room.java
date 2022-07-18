@@ -30,6 +30,7 @@ public class Room {
     private boolean available = true;
 
     @Column(name = "type")
+    @Enumerated(EnumType.STRING)
     private TypeEnum type;
 
     @Column(name = "capacity")
