@@ -15,6 +15,8 @@ public class GetOneRoomServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int id = Integer.parseInt(request.getParameter("id"));
         Room room = roomService.getOne(id);
+        request.setAttribute("room", room);
+        request.getRequestDispatcher("/room.jsp").forward(request,response);
     }
 
     @Override
