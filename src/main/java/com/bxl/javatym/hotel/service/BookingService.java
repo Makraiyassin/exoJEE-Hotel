@@ -2,7 +2,7 @@ package com.bxl.javatym.hotel.service;
 
 import com.bxl.javatym.hotel.listeners.EMFWebListener;
 import com.bxl.javatym.hotel.models.Booking;
-import com.bxl.javatym.hotel.models.Room;
+import com.bxl.javatym.hotel.models.Booking;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityNotFoundException;
@@ -21,25 +21,25 @@ public class BookingService {
         return manager.createQuery("SELECT b FROM Booking b", Booking.class).getResultList();
     }
 
-    public Room getOne(int id){
-        return manager.find(Room.class, id);
+    public Booking getOne(int id){
+        return manager.find(Booking.class, id);
     }
-    public void insert(Room toInsert){
+    public void insert(Booking toInsert){
         manager.getTransaction().begin();
         manager.persist(toInsert);
         manager.getTransaction().commit();
     }
-    public void update(Room room) {
-        if( room == null ) throw new IllegalArgumentException("Room cannot be null");
-        if( !existsById(room.getId()) ) throw new EntityNotFoundException("Entity not found");
+    public void update(Booking booking) {
+        if( booking == null ) throw new IllegalArgumentException("Booking cannot be null");
+        if( !existsById(booking.getId()) ) throw new EntityNotFoundException("Entity not found");
         manager.getTransaction().begin();
-        manager.merge(room);
+        manager.merge(booking);
         manager.getTransaction().commit();
     }
     public void delette(int id) {
         manager.getTransaction().begin();
-        Room roomToDelette = getOne(id);
-        manager.remove(roomToDelette);
+        Booking bookingToDelette = getOne(id);
+        manager.remove(bookingToDelette);
         manager.getTransaction().commit();
     }
     public boolean existsById(int id){
