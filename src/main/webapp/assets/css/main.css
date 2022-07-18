@@ -3,10 +3,6 @@
 
 }
 
-#carrousel{
-    color: white;
-    font-weight: bold;}
-
 #main{
     display: flex;
     flex-wrap: wrap;
@@ -19,5 +15,5 @@
 
 #main .card:hover{
     box-shadow: 5px 5px 10px black;
-    width: 19rem;
+    width: 19rem !important;
 }
