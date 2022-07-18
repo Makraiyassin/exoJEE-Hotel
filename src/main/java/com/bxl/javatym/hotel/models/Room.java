@@ -25,7 +25,8 @@ public class Room {
     @Column(name = "available")
     private boolean available = true;
 
-    @Column(name = "type", columnDefinition = "VARCHAR(255)")
+    @Column(name = "type")
+    @Enumerated(EnumType.STRING)
     private TypeEnum type;
 
     @Column(name = "capacity")

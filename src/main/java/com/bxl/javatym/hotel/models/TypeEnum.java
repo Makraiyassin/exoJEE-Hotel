@@ -4,9 +4,4 @@ public enum TypeEnum {
     BASIC,
     MEDIOR,
     SUITE;
-
-    @Override
-    public String toString() {
-        return "TypeEnum{}".toLowerCase();
-    }
 }
