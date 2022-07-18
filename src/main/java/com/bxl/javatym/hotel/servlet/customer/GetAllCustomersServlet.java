@@ -9,7 +9,7 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(name = "RoomsServlet", value = "/customer/getAll")
+@WebServlet(name = "GetAllCustomersServlet", value = "/customer/getAll")
 public class GetAllCustomersServlet extends HttpServlet {
 
     private final CustomerService customerService = CustomerService.getInstance();
