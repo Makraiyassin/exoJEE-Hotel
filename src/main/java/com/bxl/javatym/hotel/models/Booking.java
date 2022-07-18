@@ -23,13 +23,6 @@ public class Booking {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "booking_id")
     private int id;
-
-    @Column(name = "date_begin")
-    private LocalDate beginDate;
-
-    @Column(name = "date_end")
-    private LocalDate endDate;
-
     @ManyToOne
     @JoinColumn(name = "customer_id", foreignKey = @ForeignKey())
     private Customer customer;
@@ -37,4 +30,17 @@ public class Booking {
     @ManyToOne
     @JoinColumn(name = "room_id", foreignKey = @ForeignKey())
     private Room room;
+
+    @Column(name = "date_begin")
+    private LocalDate beginDate;
+
+    @Column(name = "date_end")
+    private LocalDate endDate;
+
+    public Booking(Customer customer, Room room, LocalDate beginDate, LocalDate endDate) {
+        this.customer = customer;
+        this.room = room;
+        this.beginDate = beginDate;
+        this.endDate = endDate;
+    }
 }
