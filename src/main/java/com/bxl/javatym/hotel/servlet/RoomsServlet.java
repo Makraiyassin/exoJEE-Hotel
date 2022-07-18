@@ -16,7 +16,7 @@ public class RoomsServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<Room> roomList = roomService.getAll();
         request.setAttribute("roomList", roomList);
-        request.getRequestDispatcher("/acceuil.jsp").forward(request,response);
+        request.getRequestDispatcher("/accueil.jsp").forward(request,response);
     }
 
     @Override
