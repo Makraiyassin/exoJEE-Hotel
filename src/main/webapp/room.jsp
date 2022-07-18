@@ -20,7 +20,7 @@
     <form action="<%=request.getContextPath()%>/booking/insert" method="post" class="w-50 mx-auto text-center">
         <img src="https://res.cloudinary.com/hzekpb1cg/image/upload/c_fill,h_581,w_1185,f_auto/s3/public/prod/s3fs-public/Chambre-double.png"  class="img-fluid mx-auto" alt="...">
         <h5 class="text-center"><%=room.getType()%> n°<%= room.getId()%></h5>
-        <input type="hidden" name="id" value="<%=room.getId()%>">
+        <input type="hidden" name="room_id" value="<%=room.getId()%>">
         <input type="hidden" name="type" value="<%=room.getType()%>">
         <div class="w-50 mx-auto">
             <div class="input-group mb-3">

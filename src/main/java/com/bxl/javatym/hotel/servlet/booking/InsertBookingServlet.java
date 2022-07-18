@@ -29,7 +29,7 @@ public class InsertBookingServlet extends HttpServlet {
         Customer customer = CustomerService.getInstance().getOne(1);
         Room room  = RoomService.getInstance().getOne(Integer.parseInt(request.getParameter("room_id")));
 
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d-MMM-yyyy");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
         String dateBeginString = request.getParameter("dateBegin");
         String dateEnddString = request.getParameter("dateEnd");
@@ -41,7 +41,8 @@ public class InsertBookingServlet extends HttpServlet {
 
 
         Booking toInsert = new Booking(customer,room,dateBegin,dateEnd);
-        bookingService.insert(toInsert);
-        response.sendRedirect(request.getContextPath());
+        System.out.println(toInsert);
+//        bookingService.insert(toInsert);
+//        response.sendRedirect(request.getContextPath());
     }
 }
