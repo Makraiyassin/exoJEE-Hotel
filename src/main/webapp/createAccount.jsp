@@ -25,23 +25,23 @@
                         <div class="card-body p-5">
                             <h2 class="text-uppercase text-center mb-5">Create an account</h2>
 
-                            <form>
+                            <form action="<%= request.getContextPath() %>/booking/insert" method="post">
 
                                 <div class="form-outline mb-4">
-                                    <input type="text" id="form3Example1cg" class="form-control form-control-lg" />
+                                    <input type="text" id="form3Example1cg" class="form-control form-control-lg" name="firstname" />
                                     <label class="form-label" for="form3Example1cg">Firstname</label>
                                 </div>
                                 <div class="form-outline mb-4">
-                                    <input type="text" id="form3Example2cg" class="form-control form-control-lg" />
+                                    <input type="text" id="form3Example2cg" class="form-control form-control-lg" name="lastname" />
                                     <label class="form-label" for="form3Example1cg">Lastname</label>
                                 </div>
                                 <div class="form-outline mb-4">
-                                    <input type="email" id="form3Example3cg" class="form-control form-control-lg" />
+                                    <input type="email" id="form3Example3cg" class="form-control form-control-lg" name="email"/>
                                     <label class="form-label" for="form3Example3cg">Your Email</label>
                                 </div>
 
                                 <div class="form-outline mb-4">
-                                    <input type="password" id="form3Example4cg" class="form-control form-control-lg" />
+                                    <input type="password" id="form3Example4cg" class="form-control form-control-lg" name="password"/>
                                     <label class="form-label" for="form3Example4cg">Password</label>
                                 </div>
 

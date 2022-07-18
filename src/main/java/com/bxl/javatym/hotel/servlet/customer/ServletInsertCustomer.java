@@ -30,6 +30,6 @@ public class ServletInsertCustomer extends HttpServlet {
         Customer toInsert = new Customer(firstName, lastName, email, password);
         service.insert(toInsert);
 
-        response.sendRedirect(request.getContextPath() + "/");
+        response.sendRedirect(request.getContextPath() + "/myProfile.jsp");
     }
 }
