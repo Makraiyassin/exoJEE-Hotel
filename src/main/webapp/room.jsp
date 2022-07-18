@@ -12,11 +12,23 @@
 
 <%@include file="assets/include/navBar.jsp"%>
 
+<%! private final RoomService service = RoomService.getInstance(); %>
+
+<% String id = request.getParameter("id");
+    if (id == null) {
+        response.setStatus(404);
+        return;
+    }
+
+    System.out.println("in the method service");
+    Room p = service.getOne(Integer.parseInt(id));
+
+%>
 
 <div class="card" style="width: 18rem;">
     <img src="https://res.cloudinary.com/hzekpb1cg/image/upload/c_fill,h_581,w_1185,f_auto/s3/public/prod/s3fs-public/Chambre-double.png" class="card-img-top" alt="...">
     <div class="card-body">
-        <h5 class="card-title"></h5>
+        <h5 class="card-title">Room number <%= p.getId()%></h5>
         <p class="card-text">he 5-star Hotel Amigo boasts elegant rooms with designer features, ...</p>
         <a href="#" class="btn btn-primary">Book now</a>
     </div>
@@ -32,3 +44,4 @@
 <%--<p class="card-text">type : <%=room.getType()%></p>--%>
 <%--<p class="card-text">capacity : <%=room.getCapacity()%></p>--%>
 <%--<p class="card-text">price : <%=room.getPrice()%> €</p>--%>
+

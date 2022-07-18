@@ -27,7 +27,7 @@ public class Room {
     private boolean available = true;
 
     @Column(name = "type")
-    private String type;
+    private TypeEnum type;
 
     @Column(name = "capacity")
     private String capacity;

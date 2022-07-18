@@ -9,11 +9,11 @@
 <html>
 <head>
     <title>Booking</title>
-    <%@include file="assets/toADD.jsp"%>
+    <%@include file="assets/include/toADD.jsp"%>
 </head>
 <body>
 
-<%@include file="assets/navBar.jsp"%>
+<%@include file="assets/include/navBar.jsp"%>
 
 <div class="input-group mb-3">
     <form action="<%= request.getContextPath() %>/book" method="post">
