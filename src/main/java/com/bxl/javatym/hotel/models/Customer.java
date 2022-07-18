@@ -33,4 +33,10 @@ public class Customer {
 
     @OneToMany(mappedBy = "customer")
     private List<Booking> bookings;
+
+
+    public Customer(String firstName, String lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
 }
