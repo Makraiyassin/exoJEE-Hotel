@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(name = "accueilServlet", value = "/")
+@WebServlet(name = "accueilServlet", value = {"/index", "/index.jsp"})
 public class AcceuilServlet extends HttpServlet {
     private final RoomService roomService = RoomService.getInstance();
     @Override

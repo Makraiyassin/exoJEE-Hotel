@@ -54,7 +54,8 @@ public class RoomService {
         List<Room> listroom = new ArrayList<>();
         manager.getTransaction().begin();
 
-        manager.createQuery("SELECT booking FROM Booking booking INNER JOIN Room room WHERE room.capacity = ?1 AND room.type = ?2 AND booking.beginDate = ?3 AND booking.endDate = ?4 AND room.price = ?5" );
+//        manager.createQuery("SELECT booking FROM Booking booking INNER JOIN Room room WHERE room.capacity = ?1 AND room.type = ?2 AND booking.beginDate = ?3 AND booking.endDate = ?4 AND room.price = ?5" );
+        manager.createQuery("SELECT r FROM Room r INNER JOIN Booking b WHERE r.capacity = ?1 AND r.type = ?2 AND b.beginDate  ?3 AND b.endDate = ?4 AND room.price = ?5" );
 
         manager.getTransaction().commit();
 
