@@ -9,33 +9,34 @@
 <html>
 <head>
     <title>Booking</title>
-    <%@include file="WEB-INF/assets/toADD.jsp"%>
+    <%@include file="assets/toADD.jsp"%>
 </head>
 <body>
 
-<%@include file="WEB-INF/assets/navBar.jsp"%>
+<%@include file="assets/navBar.jsp"%>
 
 <div class="input-group mb-3">
-    <form action="<%= request.getContextPath() %>/maman" method="post">
-        <div class="mb-3">
-            <label for="formGroupExampleInput" class="form-label">Check-In</label>
-            <input type="datetime-local" class="form-control" id="formGroupExampleInput" placeholder="Auto-Increment" name="datein">
-        </div>
-        <div class="mb-4">
-            <label for="formGroupExampleInput" class="form-label">Check-Out</label>
-            <input type="datetime-local" class="form-control" id="formGroupExampleInput" placeholder="Auto-Increment" name="dateout">
-        </div>
+    <form action="<%= request.getContextPath() %>/book" method="post">
         <div class="mb-3">
             <label for="formGroupExampleInput" class="form-label">Capacity</label>
-            <input type="number" class="form-control" id="formGroupExampleInput2" placeholder="Enter name" name="capacity">
+            <input type="number" class="form-control" id="formGroupExampleInput" placeholder="0" name="capacity">
         </div>
         <div class="mb-3">
-            <label for="formGroupExampleInput" class="form-label">Type</label>
-            <input type="text" class="form-control" id="formGroupExampleInput3" placeholder="Enter Brand" name="type">
+            <label for="inputState" class="form-label">Room's type</label>
+            <select id="inputState" class="form-select">
+                <option selected>Choose...</option>
+                <option>Basic</option>
+                <option>Medior</option>
+                <option>Suite</option>
+            </select>
         </div>
         <div class="mb-3">
-            <label for="formGroupExampleInput" class="form-label">Category</label>
-            <input type="text" class="form-control" id="formGroupExampleInput4" placeholder="Enter Category" name="category">
+            <label for="formGroupExampleInput" class="form-label">Check-In</label>
+            <input type="datetime-local" class="form-control" id="formGroupExampleInput2" placeholder="Enter name" name="checkin">
+        </div>
+        <div class="mb-3">
+            <label for="formGroupExampleInput" class="form-label">Check-Out</label>
+            <input type="datetime-local" class="form-control" id="formGroupExampleInput2" placeholder="Enter name" name="checkout">
         </div>
         <div class="form-check">
             <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
