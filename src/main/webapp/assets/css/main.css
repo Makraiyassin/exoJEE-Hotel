@@ -1,0 +1,19 @@
+.carousel-item{
+    height: 700px;
+
+}
+
+#main{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+#main .card{
+    margin: 10px 0px;
+}
+
+#main .card:hover{
+    box-shadow: 5px 5px 10px black;
+    width: 19rem !important;
+}

@@ -54,9 +54,11 @@ public class RoomService {
         List<Room> result = new ArrayList<>();
         List<Room> allRooms = getAll();
 
+
         for (Room room : allRooms) {
             // If the room is too small, we skip it.
             if (room.getCapacity() < capacity) { continue; }
+
 
             // If the room is of the wrong type, we skip it.
             if (room.getType() != type) { continue; }
@@ -75,6 +77,7 @@ public class RoomService {
 
         return  result;
     }
+
 
     public void delete(int id) {
         manager.getTransaction().begin();
