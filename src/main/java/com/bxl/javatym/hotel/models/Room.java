@@ -4,7 +4,10 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.awt.print.Book;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
+import java.time.temporal.ChronoUnit;
 
 @Entity
 @Table(name = "room")
@@ -30,11 +33,18 @@ public class Room {
     private TypeEnum type;
 
     @Column(name = "capacity")
-    private String capacity;
+    private int capacity;
 
     @Column(name = "price", columnDefinition = "DECIMAL(7,2)")
     private double price;
 
     @OneToMany(mappedBy = "room")
     private List<Booking> bookings;
+
+
+
+    public boolean availableOrNot (LocalDate date) {
+        long daysBetween = ChronoUnit.DAYS.between(date, date);
+        return available;
+    }
 }
