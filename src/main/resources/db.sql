@@ -1,3 +1,4 @@
+DROP DATABASE hoteldb;
 CREATE DATABASE hoteldb;
 USE hoteldb;
 CREATE TABLE room(

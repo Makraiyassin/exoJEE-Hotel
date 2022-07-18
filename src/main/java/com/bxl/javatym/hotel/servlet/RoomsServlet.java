@@ -9,14 +9,14 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(name = "RoomsServlet", value = "/getAll")
+@WebServlet(name = "RoomsServlet", value = "/")
 public class RoomsServlet extends HttpServlet {
     private final RoomService roomService = RoomService.getInstance();
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<Room> roomList = roomService.getAll();
-        request.setAttribute("rooms", roomList);
-        request.getRequestDispatcher("/hotel/index.jsp").forward(request,response);
+        request.setAttribute("roomList", roomList);
+        request.getRequestDispatcher("/acceuil.jsp").forward(request,response);
     }
 
     @Override
