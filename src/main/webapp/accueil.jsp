@@ -23,8 +23,9 @@
         <div class="card-body">
             <h5 class="card-title"></h5>
             <p>room number: <%= room.getId()%></p>
-            <p class="card-text">he 5-star Hotel Amigo boasts elegant rooms with designer features, ...</p>
-            <a href="#" class="btn btn-primary">Book now</a>
+            <p>price: <%= room.getPrice()%>€</p>
+            <p>capacity: <%= room.getCapacity()%> persons</p>
+            <a href="<%=request.getContextPath()%>/room/getOne?id=<%=room.getId()%>" class="btn btn-primary">Book now</a>
         </div>
     </div>
     <%}%>

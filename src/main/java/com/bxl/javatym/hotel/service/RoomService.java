@@ -1,13 +1,13 @@
 package com.bxl.javatym.hotel.service;
 
 import com.bxl.javatym.hotel.listeners.EMFWebListener;
+import com.bxl.javatym.hotel.models.Booking;
 import com.bxl.javatym.hotel.models.Room;
 import com.bxl.javatym.hotel.models.TypeEnum;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityNotFoundException;
-import javax.persistence.TypedQuery;
-import java.sql.PreparedStatement;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -50,24 +50,39 @@ public class RoomService {
         manager.getTransaction().commit();
     }
 
-    public List<Room> search (int capacity, TypeEnum type, LocalDateTime checkin, LocalDateTime checkout, int price ) {
-        List<Room> listroom = new ArrayList<>();
-        manager.getTransaction().begin();
+    public List<Room> search(int capacity, TypeEnum type, LocalDate checkin, LocalDate checkout, int priceMax) {
+        List<Room> result = new ArrayList<>();
+        List<Room> allRooms = getAll();
 
-//        manager.createQuery("SELECT booking FROM Booking booking INNER JOIN Room room WHERE room.capacity = ?1 AND room.type = ?2 AND booking.beginDate = ?3 AND booking.endDate = ?4 AND room.price = ?5" );
-        manager.createQuery("SELECT r FROM Room r INNER JOIN Booking b WHERE r.capacity = ?1 AND r.type = ?2 AND b.beginDate  ?3 AND b.endDate = ?4 AND room.price = ?5" );
 
-        manager.getTransaction().commit();
+        for (Room room : allRooms) {
+            // If the room is too small, we skip it.
+            if (room.getCapacity() < capacity) { continue; }
 
-        return listroom;
+
+            // If the room is of the wrong type, we skip it.
+            if (room.getType() != type) { continue; }
+
+            // If the room is too expensive, we skip it.
+            if (room.getPrice() > priceMax) { continue; }
+
+            // If the room is not available, we skip it.
+            if (!room.isAvailable(checkin, checkout)){
+                continue;
+            }
+
+            // If the room matches all conditions we add it to the result list.
+            result.add(room);
+        }
+
+        return  result;
     }
 
 
-
-    public void delette(int id) {
+    public void delete(int id) {
         manager.getTransaction().begin();
-        Room roomToDelette = getOne(id);
-        manager.remove(roomToDelette);
+        Room roomToDelete = getOne(id);
+        manager.remove(roomToDelete);
         manager.getTransaction().commit();
     }
 

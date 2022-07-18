@@ -11,14 +11,14 @@
 
 #main .card{
     margin: 10px 0px;
+    transition: 0.4s !important;
 }
 
 #main .card:hover{
-    box-shadow: 5px 5px 10px black;
+    box-shadow: 3px 3px 8px black;
     width: 19rem !important;
 }
 
 .img5 {
-    width: 286px;
     height: 187px;
 }
