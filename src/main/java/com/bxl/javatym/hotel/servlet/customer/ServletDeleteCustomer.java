@@ -1,6 +1,5 @@
 package com.bxl.javatym.hotel.servlet.customer;
 
-import com.bxl.javatym.hotel.models.Customer;
 import com.bxl.javatym.hotel.service.CustomerService;
 
 import javax.servlet.ServletException;
