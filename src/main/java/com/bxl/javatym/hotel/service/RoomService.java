@@ -16,23 +16,33 @@ public class RoomService {
     }
     private RoomService() {}
     private final EntityManager manager = EMFWebListener.createEntityManager();
-    private final List<Room> roomList = new ArrayList<>();
-
     public List<Room> getAll(){
         return manager.createQuery("SELECT r FROM Room r", Room.class).getResultList();
     }
 
     public Room getOne(int id){
-        return roomList.stream()
-                .filter(p -> p.getId() == id)
-                .findFirst()
-                .orElseThrow( () -> new EntityNotFoundException("room non trouver = "+id) );
+        return manager.find(Room.class, id);
     }
-
-    public long insert(Room toInsert){
-        roomList.add(toInsert);
-        return toInsert.getId();
+    public void insert(Room toInsert){
+        manager.getTransaction().begin();
+        manager.persist(toInsert);
+        manager.getTransaction().commit();
     }
-
+    public void update(Room room) {
+        if( room == null ) throw new IllegalArgumentException("Room cannot be null");
+        if( !existsById(room.getId()) ) throw new EntityNotFoundException("Entity not found");
+        manager.getTransaction().begin();
+        manager.merge(room);
+        manager.getTransaction().commit();
+    }
+    public void delette(int id) {
+        manager.getTransaction().begin();
+        Room roomToDelette = getOne(id);
+        manager.remove(roomToDelette);
+        manager.getTransaction().commit();
+    }
+    public boolean existsById(int id){
+        return getOne(id) != null;
+    }
 
 }

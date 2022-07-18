@@ -4,7 +4,7 @@ CREATE TABLE room(
                      room_id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
                      available BOOLEAN NOT NULL,
                      type VARCHAR(255) NOT NULL,
-                     capacity VARCHAR(255) NOT NULL,
+                     capacity int NOT NULL,
                      price DECIMAL(7,2) NOT NULL
 );
 CREATE TABLE customer(
@@ -21,3 +21,13 @@ CREATE TABLE Booking(
                         CONSTRAINT fk_customer_id FOREIGN KEY (customer_id) REFERENCES customer(customer_id),
                         CONSTRAINT fk_room_id FOREIGN KEY (room_id) REFERENCES room(room_id)
 );
+
+INSERT INTO `room` (`room_id`, `available`, `type`, `capacity`, `price`) VALUES (NULL, 1, 'standart', 2, 200.99);
+INSERT INTO `room` (`room_id`, `available`, `type`, `capacity`, `price`) VALUES (NULL, 1, 'standart', 2, 200.99);
+INSERT INTO `room` (`room_id`, `available`, `type`, `capacity`, `price`) VALUES (NULL, 1, 'standart', 2, 200.99);
+INSERT INTO `room` (`room_id`, `available`, `type`, `capacity`, `price`) VALUES (NULL, 1, 'family', 4, 350.99);
+INSERT INTO `room` (`room_id`, `available`, `type`, `capacity`, `price`) VALUES (NULL, 1, 'family', 4, 350.99);
+INSERT INTO `room` (`room_id`, `available`, `type`, `capacity`, `price`) VALUES (NULL, 1, 'family', 4, 350.99);
+INSERT INTO `room` (`room_id`, `available`, `type`, `capacity`, `price`) VALUES (NULL, 1, 'family', 4, 350.99);
+INSERT INTO `room` (`room_id`, `available`, `type`, `capacity`, `price`) VALUES (NULL, 1, 'family', 4, 350.99);
+
