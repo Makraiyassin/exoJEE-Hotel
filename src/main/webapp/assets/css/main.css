@@ -3,9 +3,10 @@
 
 }
 
-#carrousel{
-    color: white;
-    font-weight: bold;}
+#carouselExampleDark carousel-caption{
+    color: white !important;
+    font-weight: bold !important;
+}
 
 #main{
     display: flex;
@@ -19,5 +20,5 @@
 
 #main .card:hover{
     box-shadow: 5px 5px 10px black;
-    width: 19rem;
+    width: 19rem !important;
 }
