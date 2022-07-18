@@ -13,7 +13,7 @@ CREATE TABLE customer(
                          last_name VARCHAR(255) NOT NULL,
                          first_name VARCHAR(255) NOT NULL,
                          email VARCHAR(255) NOT NULL,
-                         password VARCHAR(255) NOT NULL,
+                         password VARCHAR(255) NOT NULL
 );
 CREATE TABLE Booking(
                         booking_id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
@@ -37,7 +37,10 @@ INSERT INTO `room` (`room_id`, `available`, `type`, `capacity`, `price`) VALUES 
 INSERT INTO `room` (`room_id`, `available`, `type`, `capacity`, `price`) VALUES (NULL, 1, 'BASIC', 2, 200.99);
 INSERT INTO `room` (`room_id`, `available`, `type`, `capacity`, `price`) VALUES (NULL, 1, 'MEDIOR', 4, 300.99);
 INSERT INTO `room` (`room_id`, `available`, `type`, `capacity`, `price`) VALUES (NULL, 1, 'SUITE', 6, 400.99);
+INSERT INTO `room` (`room_id`, `available`, `type`, `capacity`, `price`) VALUES (NULL, 1, 'SUITE', 6, 400.99);
 
+INSERT INTO `customer` (`customer_id`, `last_name`, `first_name`, `email`, `password`) VALUES (NULL, "hello", "hola", "hello.hola@customer.com","helloWorld");
+INSERT INTO `customer` (`customer_id`, `last_name`, `first_name`, `email`, `password`) VALUES (NULL, "ya", "yes", "ya.yes@customer.com","helloWorld");
 
-
-
+INSERT INTO `booking` (`booking_id`, `customer_id`, `room_id`, `date_begin`, `date_end`) VALUES (NULL, '1', '1', '2022-07-19', '2022-07-26');
+INSERT INTO `booking` (`booking_id`, `customer_id`, `room_id`, `date_begin`, `date_end`) VALUES (NULL, '2', '1', '2022-08-05', '2022-08-20');

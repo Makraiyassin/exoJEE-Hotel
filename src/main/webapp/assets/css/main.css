@@ -3,11 +3,6 @@
 
 }
 
-#carouselExampleDark carousel-caption{
-    color: white !important;
-    font-weight: bold !important;
-}
-
 #main{
     display: flex;
     flex-wrap: wrap;
