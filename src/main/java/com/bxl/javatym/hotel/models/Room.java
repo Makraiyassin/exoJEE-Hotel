@@ -3,11 +3,8 @@ package com.bxl.javatym.hotel.models;
 import lombok.*;
 
 import javax.persistence.*;
-import java.awt.print.Book;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.List;
-import java.time.temporal.ChronoUnit;
 
 @Entity
 @Table(name = "room")
@@ -43,11 +40,37 @@ public class Room {
     private List<Booking> bookings;
 
 
-    public boolean availableOrNot (LocalDate date) {
-        long daysBetween = ChronoUnit.DAYS.between(date, date);
-        return available;
+    public boolean isAvailable(LocalDate checkinDate, LocalDate checkoutDate) {
+        // The check-out date cannot be earlier than or equals to the check-in date.
+        if ( checkoutDate.compareTo(checkinDate) <= 0 ){
+            throw new IllegalArgumentException("The check-out date cannot be earlier than or equals to the check-in date.");
+        }
 
+        // The check-in date cannot be set in the past.
+        if (checkinDate.compareTo(LocalDate.now()) < 0) {
+            throw new IllegalArgumentException("The check-in date cannot be set in the past.");
+        }
+
+        if (!available){
+            return false;
+        }
+
+        for (Booking booking : bookings) {
+            // If the booking is already over we skip it.
+            if (booking.getEndDate().compareTo(LocalDate.now()) < 0){
+                continue;
+            }
+
+            // If the checkin happens before the end date of the previously booked booking AND the checkout happens after the beginning of that previously booked booking
+            if(checkinDate.compareTo(booking.getEndDate()) < 0 && checkoutDate.compareTo(booking.getBeginDate()) > 0){
+                return false;
+            }
+        }
+
+        return true;
     }
+
+
     public Room(boolean available, TypeEnum type, int capacity, double price, List<Booking> bookings) {
         this.available = available;
         this.type = type;
