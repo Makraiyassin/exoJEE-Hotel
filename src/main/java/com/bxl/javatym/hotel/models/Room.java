@@ -36,6 +36,9 @@ public class Room {
     @Column(name = "price", columnDefinition = "DECIMAL(7,2)")
     private double price;
 
+    @Column(name = "img")
+    private String img;
+
     @OneToMany(mappedBy = "room")
     private List<Booking> bookings;
 
@@ -71,12 +74,14 @@ public class Room {
     }
 
 
-    public Room(boolean available, TypeEnum type, int capacity, double price, List<Booking> bookings) {
+
+    public Room(boolean available, TypeEnum type, int capacity, double price, List<Booking> bookings, String img) {
         this.available = available;
         this.type = type;
         this.capacity = capacity;
         this.price = price;
         this.bookings = bookings;
+        this.img = img;
     }
 }
 

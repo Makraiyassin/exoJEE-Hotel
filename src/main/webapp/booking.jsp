@@ -32,29 +32,19 @@
         </div>
         <div class="mb-3">
             <label for="formGroupExampleInput" class="form-label">Check-In</label>
-            <input type="datetime-local" class="form-control" id="formGroupExampleInput2" placeholder="Enter name" name="checkin">
+            <input type="datetime-local" class="form-control" id="formGroupExampleInput26" placeholder="Enter name" name="checkin">
         </div>
         <div class="mb-3">
             <label for="formGroupExampleInput" class="form-label">Check-Out</label>
-            <input type="datetime-local" class="form-control" id="formGroupExampleInput2" placeholder="Enter name" name="checkout">
+            <input type="datetime-local" class="form-control" id="formGroupExampleInput25" placeholder="Enter name" name="checkout">
         </div>
-        <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-            <label class="form-check-label" for="flexCheckDefault">
-                50$ to 70$
-            </label>
+        <div class="mb-3">
+            <label for="formGroupExampleInput" class="form-label">Minimum price</label>
+            <input type="number" class="form-control" id="formGroupExampleInput24" placeholder="201$" name="minprice">
         </div>
-        <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-            <label class="form-check-label" for="flexCheckChecked">
-                70 to 90$
-            </label>
-        </div>
-        <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-            <label class="form-check-label" for="flexCheckChecked">
-                90$ to 150$
-            </label>
+        <div class="mb-3">
+            <label for="formGroupExampleInput" class="form-label">Maximum price</label>
+            <input type="number" class="form-control" id="formGroupExampleInput23" placeholder="405$" name="maxprice">
         </div>
         <div class="mb-3">
             <div class="form-check">

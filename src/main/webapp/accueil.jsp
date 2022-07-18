@@ -19,9 +19,9 @@
         for (Room room : roomList ) {
     %>
     <div class="card" style="width: 18rem;">
-        <img src="https://res.cloudinary.com/hzekpb1cg/image/upload/c_fill,h_581,w_1185,f_auto/s3/public/prod/s3fs-public/Chambre-double.png" class="card-img-top" alt="...">
-        <div class="card-body text-center">
-            <h5 class="card-title"><%= room.getType()%></h5>
+        <img src="<%= room.getImg()%>" class="img5">
+        <div class="card-body">
+            <h5 class="card-title"></h5>
             <p>room number: <%= room.getId()%></p>
             <p>price: <%= room.getPrice()%>€</p>
             <p>capacity: <%= room.getCapacity()%> persons</p>
