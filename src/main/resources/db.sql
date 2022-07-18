@@ -23,12 +23,20 @@ CREATE TABLE Booking(
                         CONSTRAINT fk_room_id FOREIGN KEY (room_id) REFERENCES room(room_id)
 );
 
-INSERT INTO `room` (`room_id`, `available`, `type`, `capacity`, `price`) VALUES (NULL, 1, 'standart', 2, 200.99);
-INSERT INTO `room` (`room_id`, `available`, `type`, `capacity`, `price`) VALUES (NULL, 1, 'standart', 2, 200.99);
-INSERT INTO `room` (`room_id`, `available`, `type`, `capacity`, `price`) VALUES (NULL, 1, 'standart', 2, 200.99);
-INSERT INTO `room` (`room_id`, `available`, `type`, `capacity`, `price`) VALUES (NULL, 1, 'family', 4, 350.99);
-INSERT INTO `room` (`room_id`, `available`, `type`, `capacity`, `price`) VALUES (NULL, 1, 'family', 4, 350.99);
-INSERT INTO `room` (`room_id`, `available`, `type`, `capacity`, `price`) VALUES (NULL, 1, 'family', 4, 350.99);
-INSERT INTO `room` (`room_id`, `available`, `type`, `capacity`, `price`) VALUES (NULL, 1, 'family', 4, 350.99);
-INSERT INTO `room` (`room_id`, `available`, `type`, `capacity`, `price`) VALUES (NULL, 1, 'family', 4, 350.99);
+INSERT INTO `room` (`room_id`, `available`, `type`, `capacity`, `price`) VALUES (NULL, 1, 'basic', 2, 200.99);
+INSERT INTO `room` (`room_id`, `available`, `type`, `capacity`, `price`) VALUES (NULL, 1, 'medior', 4, 300.99);
+INSERT INTO `room` (`room_id`, `available`, `type`, `capacity`, `price`) VALUES (NULL, 1, 'suite', 6, 400.99);
+INSERT INTO `room` (`room_id`, `available`, `type`, `capacity`, `price`) VALUES (NULL, 1, 'basic', 2, 200.99);
+INSERT INTO `room` (`room_id`, `available`, `type`, `capacity`, `price`) VALUES (NULL, 1, 'medior', 4, 300.99);
+INSERT INTO `room` (`room_id`, `available`, `type`, `capacity`, `price`) VALUES (NULL, 1, 'suite', 6, 400.99);
+INSERT INTO `room` (`room_id`, `available`, `type`, `capacity`, `price`) VALUES (NULL, 1, 'basic', 2, 200.99);
+INSERT INTO `room` (`room_id`, `available`, `type`, `capacity`, `price`) VALUES (NULL, 1, 'medior', 4, 300.99);
+INSERT INTO `room` (`room_id`, `available`, `type`, `capacity`, `price`) VALUES (NULL, 1, 'suite', 6, 400.99);
+INSERT INTO `room` (`room_id`, `available`, `type`, `capacity`, `price`) VALUES (NULL, 1, 'basic', 2, 200.99);
+INSERT INTO `room` (`room_id`, `available`, `type`, `capacity`, `price`) VALUES (NULL, 1, 'medior', 4, 300.99);
+INSERT INTO `room` (`room_id`, `available`, `type`, `capacity`, `price`) VALUES (NULL, 1, 'suite', 6, 400.99);
+INSERT INTO `room` (`room_id`, `available`, `type`, `capacity`, `price`) VALUES (NULL, 1, 'basic', 2, 200.99);
+INSERT INTO `room` (`room_id`, `available`, `type`, `capacity`, `price`) VALUES (NULL, 1, 'medior', 4, 300.99);
+INSERT INTO `room` (`room_id`, `available`, `type`, `capacity`, `price`) VALUES (NULL, 1, 'suite', 6, 400.99);
+
 

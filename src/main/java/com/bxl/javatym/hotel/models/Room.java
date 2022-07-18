@@ -29,7 +29,7 @@ public class Room {
     @Column(name = "available")
     private boolean available = true;
 
-    @Column(name = "type")
+    @Column(name = "type", columnDefinition = "VARCHAR(255)")
     private TypeEnum type;
 
     @Column(name = "capacity")
@@ -42,9 +42,17 @@ public class Room {
     private List<Booking> bookings;
 
 
-
     public boolean availableOrNot (LocalDate date) {
         long daysBetween = ChronoUnit.DAYS.between(date, date);
         return available;
+
+    }
+    public Room(boolean available, TypeEnum type, int capacity, double price, List<Booking> bookings) {
+        this.available = available;
+        this.type = type;
+        this.capacity = capacity;
+        this.price = price;
+        this.bookings = bookings;
     }
 }
+
