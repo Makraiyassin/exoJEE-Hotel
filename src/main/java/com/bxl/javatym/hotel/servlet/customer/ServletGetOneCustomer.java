@@ -7,22 +7,20 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
-import java.util.List;
 
-@WebServlet(name = "GetAllCustomersServlet", value = "/customer/getAll")
-public class GetAllCustomersServlet extends HttpServlet {
+@WebServlet(name = "ServletGetOneCustomer", value = "/customer/getOne")
+public class ServletGetOneCustomer extends HttpServlet {
 
     private final CustomerService customerService = CustomerService.getInstance();
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        List<Customer> customerList = customerService.getAll();
-        request.setAttribute("customers", customerList);
+        Customer customer = customerService.getOne(Integer.parseInt(request.getParameter("customer_id")));
+        request.setAttribute("customer", customer);
         request.getRequestDispatcher("/hotel/index.jsp").forward(request,response);
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
     }
 }

@@ -3,7 +3,6 @@ package com.bxl.javatym.hotel.models;
 import lombok.*;
 
 import javax.persistence.*;
-import java.awt.print.Book;
 import java.util.List;
 
 @Entity
@@ -26,7 +25,7 @@ public class Room {
     @Column(name = "available")
     private boolean available = true;
 
-    @Column(name = "type")
+    @Column(name = "type", columnDefinition = "VARCHAR(255)")
     private TypeEnum type;
 
     @Column(name = "capacity")
@@ -46,3 +45,4 @@ public class Room {
         this.bookings = bookings;
     }
 }
+
