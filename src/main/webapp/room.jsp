@@ -20,7 +20,6 @@
         return;
     }
 
-    System.out.println("in the method service");
     Room p = service.getOne(Integer.parseInt(id));
 
 %>

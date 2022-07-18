@@ -3,7 +3,11 @@ package com.bxl.javatym.hotel.models;
 import lombok.*;
 
 import javax.persistence.*;
+import java.awt.print.Book;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
+import java.time.temporal.ChronoUnit;
 
 @Entity
 @Table(name = "room")
@@ -37,6 +41,12 @@ public class Room {
     @OneToMany(mappedBy = "room")
     private List<Booking> bookings;
 
+
+    public boolean availableOrNot (LocalDate date) {
+        long daysBetween = ChronoUnit.DAYS.between(date, date);
+        return available;
+
+    }
     public Room(boolean available, TypeEnum type, int capacity, double price, List<Booking> bookings) {
         this.available = available;
         this.type = type;
