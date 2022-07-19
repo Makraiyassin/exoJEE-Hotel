@@ -1,3 +1,11 @@
+<%@ page import="com.bxl.javatym.hotel.service.CustomerService" %>
+<%@ page import="com.bxl.javatym.hotel.models.Customer" %>
+<%@ page import="java.util.List" %>
+<%
+    CustomerService customerService = CustomerService.getInstance();
+    List<Customer> customerList= customerService.getAll();
+%>
+
 <nav class="navbar navbar-expand-lg bg-light">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">InnovHotel</a>
@@ -9,8 +17,18 @@
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="<%=request.getContextPath()  %>/">Home</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="<%=request.getContextPath()  %>/myProfile.jsp">MyProfile</a>
+<%--                <li class="nav-item">--%>
+<%--                    <a class="nav-link" href="<%=request.getContextPath()  %>/myProfile.jsp">MyProfile</a>--%>
+<%--                </li>--%>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Profiles
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <% for (Customer customer : customerList) {%>
+                        <li><a class="dropdown-item" href="<%=request.getContextPath() %>/myProfile?id=<%=customer.getId()%>"><%=customer.getFirstName()%> <%=customer.getLastName()%></a></li>
+                        <%}%>
+                    </ul>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="<%=request.getContextPath()  %>/booking.jsp">Booking</a>

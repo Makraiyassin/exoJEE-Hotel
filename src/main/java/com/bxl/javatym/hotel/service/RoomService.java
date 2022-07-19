@@ -17,7 +17,6 @@ public class RoomService {
     private static RoomService instance;
 
     public static RoomService getInstance(){
-        System.out.println("recup de l'instance du service");
         return instance == null ? instance = new RoomService() : instance;
     }
 
