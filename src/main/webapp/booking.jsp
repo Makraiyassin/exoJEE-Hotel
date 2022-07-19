@@ -25,7 +25,7 @@
         <div class="mb-3">
             <label for="inputState" class="form-label">Room's type</label>
             <select id="inputState" class="form-select" name="type">
-                <option selected>Choose...</option>
+                <option selected value="default">Choose...</option>
                 <option>Basic</option>
                 <option>Medior</option>
                 <option>Suite</option>
@@ -33,19 +33,19 @@
         </div>
         <div class="mb-3">
             <label for="formGroupExampleInput" class="form-label">Check-In</label>
-            <input type="date" class="form-control" id="formGroupExampleInput26" placeholder="Enter name" name="checkin">
+            <input type="date" class="form-control" id="formGroupExampleInput26" placeholder="Enter name" name="checkin" required>
         </div>
         <div class="mb-3">
             <label for="formGroupExampleInput" class="form-label">Check-Out</label>
-            <input type="date" class="form-control" id="formGroupExampleInput25" placeholder="Enter name" name="checkout">
+            <input type="date" class="form-control" id="formGroupExampleInput25" placeholder="Enter name" name="checkout" required>
         </div>
         <div class="mb-3">
             <label for="formGroupExampleInput" class="form-label">Minimum price</label>
-            <input type="number" class="form-control" min="201" max="405" id="formGroupExampleInput24" placeholder="201$" name="minprice">
+            <input type="number" class="form-control" min="200" max="405" id="formGroupExampleInput24" placeholder="201$" name="minprice">
         </div>
         <div class="mb-3">
             <label for="formGroupExampleInput" class="form-label">Maximum price</label>
-            <input type="number" class="form-control" min="202" max="405" id="formGroupExampleInput23" placeholder="405$" name="maxprice">
+            <input type="number" class="form-control" min="201" max="405" id="formGroupExampleInput23" placeholder="405$" name="maxprice">
         </div>
         <div class="mb-3">
             <div class="form-check">
@@ -53,9 +53,6 @@
                 <label class="form-check-label" for="invalidCheck3">
                     Agree to terms and conditions
                 </label>
-                <div id="invalidCheck3Feedback" class="invalid-feedback">
-                    You must agree before submitting.
-                </div>
             </div>
         <button class="btn btn-outline-secondary" type="submit" id="button-addon1">Send</button>
     </form>

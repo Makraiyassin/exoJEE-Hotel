@@ -2,6 +2,7 @@ package com.bxl.javatym.hotel.service;
 
 import com.bxl.javatym.hotel.listeners.EMFWebListener;
 import com.bxl.javatym.hotel.models.Customer;
+import com.bxl.javatym.hotel.models.Room;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityNotFoundException;
@@ -21,7 +22,8 @@ public class CustomerService {
     private final EntityManager manager = EMFWebListener.createEntityManager();
 
     public List<Customer> getAll(){
-        return manager.createNamedQuery("c_get_all").getResultList();
+//        return manager.createNamedQuery("c_get_all").getResultList();
+        return manager.createQuery("SELECT c FROM Customer c", Customer.class).getResultList();
     }
 
     public Customer getOne(int id){

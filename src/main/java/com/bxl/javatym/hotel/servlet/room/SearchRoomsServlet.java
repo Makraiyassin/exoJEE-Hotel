@@ -21,16 +21,20 @@ public class SearchRoomsServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        int capacity = Integer.parseInt(request.getParameter("capacity"));
+        int capacity = Integer.parseInt(request.getParameter("capacity").equals("") ? "0" : request.getParameter("capacity"));
 
         TypeEnum type = TypeEnum.valueOf(request.getParameter("type").replaceAll("\\s+","").toUpperCase());
 
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd", Locale.US);
         LocalDate checkin = LocalDate.parse(request.getParameter("checkin"), formatter);
         LocalDate checkout = LocalDate.parse(request.getParameter("checkout"), formatter);
-        int priceMax = Integer.parseInt(request.getParameter("maxprice"));
+        if (checkin == null || checkout == null)
+            response.setStatus(400);
+        int priceMin = Integer.parseInt(request.getParameter("minprice").equals("") ? "1" : request.getParameter("minprice"));
+        int priceMax = Integer.parseInt(request.getParameter("maxprice").equals("") ? "10000" : request.getParameter("maxprice"));
 
-        List<Room> rooms = roomService.search(capacity, type, checkin, checkout, priceMax);
+
+        List<Room> rooms = roomService.search(capacity, type, checkin, checkout, priceMin, priceMax);
 
         request.setAttribute("roomList", rooms);
         request.getRequestDispatcher("/roomsSearchResult.jsp").forward(request, response);
