@@ -10,7 +10,7 @@
 <html>
 <head>
     <title>Available Rooms</title>
-    <link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/main.css">
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/styles.css">
     <%@include file="assets/include/toADD.jsp"%>
 </head>
 <body>

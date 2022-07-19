@@ -6,9 +6,7 @@
 <html>
 <head>
     <title>Welcome</title>
-    <link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/main.css">
     <%@include file="assets/include/toADD.jsp"%>
-    <%@include file="assets/include/favicon.jsp"%>
 </head>
 <body>
 
