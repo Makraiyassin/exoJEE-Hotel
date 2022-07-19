@@ -45,12 +45,12 @@ public class Room {
 
     public boolean isAvailable(LocalDate checkinDate, LocalDate checkoutDate) {
         // The check-out date cannot be earlier than or equals to the check-in date.
-        if ( checkoutDate.compareTo(checkinDate) <= 0 ){
+        if ( checkoutDate.isBefore(checkinDate) || checkoutDate.isEqual(checkinDate) ){
             throw new IllegalArgumentException("The check-out date cannot be earlier than or equals to the check-in date.");
         }
 
         // The check-in date cannot be set in the past.
-        if (checkinDate.compareTo(LocalDate.now()) < 0) {
+        if (checkinDate.isBefore(LocalDate.now())) {
             throw new IllegalArgumentException("The check-in date cannot be set in the past.");
         }
 
@@ -64,7 +64,9 @@ public class Room {
                 continue;
             }
 
-            // If the checkin happens before the end date of the previously booked booking AND the checkout happens after the beginning of that previously booked booking
+            // If the checkin happens before the end date of the previously booked booking
+            // AND the checkout happens after the beginning of that previously booked booking.
+            // Then it means it is in conflict with that previously booked booking.
             if( checkinDate.isBefore(booking.getEndDate()) && booking.getBeginDate().isBefore(checkoutDate) ) {
                 return false;
             }

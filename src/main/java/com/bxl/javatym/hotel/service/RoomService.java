@@ -65,9 +65,7 @@ public class RoomService {
             if (room.getPrice() > priceMax) { continue; }
 
             // If the room is not available, we skip it.
-            if (!room.isAvailable(checkin, checkout)){
-                continue;
-            }
+            if (!room.isAvailable(checkin, checkout)){ continue; }
 
             // If the room matches all conditions we add it to the result list.
             result.add(room);
