@@ -52,9 +52,6 @@
                 <label class="form-check-label" for="invalidCheck3">
                     Agree to terms and conditions
                 </label>
-                <div id="invalidCheck3Feedback" class="invalid-feedback">
-                    You must agree before submitting.
-                </div>
             </div>
         <button class="btn btn-outline-secondary" type="submit" id="button-addon1">Send</button>
     </form>

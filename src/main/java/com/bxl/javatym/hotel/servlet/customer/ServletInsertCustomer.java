@@ -28,7 +28,7 @@ public class ServletInsertCustomer extends HttpServlet {
         String password = request.getParameter("password");
         String confirmPassword = request.getParameter("confirmPassword");
 
-        if (confirmPassword.equals(password) && firstName != null && lastName != null && email != null) {
+        if (confirmPassword.equals(password) && firstName != "" && lastName != "" && email != "") {
             Customer toInsert = new Customer(firstName, lastName, email, password);
             service.insert(toInsert);
 

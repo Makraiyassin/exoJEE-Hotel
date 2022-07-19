@@ -28,35 +28,38 @@
                             <form action="<%= request.getContextPath() %>/customer/add" method="post">
 
                                 <div class="form-outline mb-4">
-                                    <input type="text" id="form3Example1cg" class="form-control form-control-lg" name="firstname" />
+                                    <input type="text" id="form3Example1cg" class="form-control form-control-lg" name="firstname" required />
                                     <label class="form-label" for="form3Example1cg">Firstname</label>
                                 </div>
                                 <div class="form-outline mb-4">
-                                    <input type="text" id="form3Example2cg" class="form-control form-control-lg" name="lastname" />
+                                    <input type="text" id="form3Example2cg" class="form-control form-control-lg" name="lastname" required />
                                     <label class="form-label" for="form3Example1cg">Lastname</label>
                                 </div>
                                 <div class="form-outline mb-4">
-                                    <input type="email" id="form3Example3cg" class="form-control form-control-lg" name="email"/>
+                                    <input type="email" id="form3Example3cg" class="form-control form-control-lg" name="email" required/>
                                     <label class="form-label" for="form3Example3cg">Your Email</label>
                                 </div>
 
                                 <div class="form-outline mb-4">
-                                    <input type="password" id="form3Example4cg" class="form-control form-control-lg" name="password"/>
+                                    <input type="password" id="form3Example4cg" class="form-control form-control-lg" name="password" required/>
                                     <label class="form-label" for="form3Example4cg">Password</label>
                                 </div>
 
                                 <div class="form-outline mb-4">
-                                    <input type="password" id="form3Example4cdg" class="form-control form-control-lg" name="confirmPassword" />
+                                    <input type="password" id="form3Example4cdg" class="form-control form-control-lg" name="confirmPassword" required/>
                                     <label class="form-label" for="form3Example4cdg">Repeat your password</label>
                                 </div>
 
-                                <div class="form-check d-flex justify-content-center mb-5">
-                                    <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3cg" />
-                                    <label class="form-check-label" for="form2Example3g">
-                                        I agree all statements in <a href="#!" class="text-body"><u>Terms of service</u></a>
-                                    </label>
-                                </div>
+                                <div class="form-outline mb-4">
+                                    <div class="form-check">
+                                        <input class="form-check-input is-invalid" type="checkbox" value="" id="invalidCheck3" aria-describedby="invalidCheck3Feedback" required>
+                                        <label class="form-check-label" for="invalidCheck3">
+                                            Agree to terms and conditions
+                                        </label>
+                                        <div id="invalidCheck3Feedback" class="invalid-feedback">
 
+                                        </div>
+                                    </div>
                                 <div class="d-flex justify-content-center">
                                     <button type="submit"
                                             class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Register</button>
