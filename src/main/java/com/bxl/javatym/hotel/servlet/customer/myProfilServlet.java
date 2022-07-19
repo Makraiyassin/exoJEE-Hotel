@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(name = "ServletGetOneCustomer", value = {"myProfile","/myProfile.jsp"})
+@WebServlet(name = "ServletGetOneCustomer", value = {"/myProfile","/myProfile.jsp"})
 public class myProfilServlet extends HttpServlet {
 
     private final CustomerService customerService = CustomerService.getInstance();
@@ -20,7 +20,7 @@ public class myProfilServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Customer customer = customerService.getOne(Integer.parseInt(request.getParameter("id")));
         request.setAttribute("customer", customer);
-        request.getRequestDispatcher("/myProfil.jsp").forward(request,response);
+        request.getRequestDispatcher("/myProfile.jsp").forward(request,response);
     }
 
     @Override

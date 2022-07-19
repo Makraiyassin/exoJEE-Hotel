@@ -14,7 +14,7 @@
     <%@include file="assets/include/toADD.jsp"%>
 </head>
 <body>
-<%@include file="assets/include/navBar.jsp"%>
+<%--<%@include file="assets/include/navBar.jsp"%>--%>
 
 <%
     Customer customer = (Customer) request.getAttribute("customer");
