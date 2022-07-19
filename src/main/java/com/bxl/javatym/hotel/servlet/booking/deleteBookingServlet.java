@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(name = "GetOneRoomServlet", value = "/booking/delete")
+@WebServlet(name = "deleteBookingServlet", value = "/booking/delete")
 public class deleteBookingServlet extends HttpServlet {
     private final BookingService bookingService= BookingService.getInstance();
     @Override
