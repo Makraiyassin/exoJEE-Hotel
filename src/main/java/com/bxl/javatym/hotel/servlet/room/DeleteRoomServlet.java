@@ -9,8 +9,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(name = "GetOneRoomServlet", value = "/room/delete")
-public class deleteRoomServlet extends HttpServlet {
+@WebServlet(name = "DeleteRoomServlet", value = "/room/delete")
+public class DeleteRoomServlet extends HttpServlet {
     private final RoomService roomService = RoomService.getInstance();
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
