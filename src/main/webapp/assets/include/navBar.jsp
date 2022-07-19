@@ -33,6 +33,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="<%=request.getContextPath()  %>/booking.jsp">Booking</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="<%=request.getContextPath()  %>/contact.jsp">Contact</a>
+                </li>
             </ul>
             <form class="d-flex" role="search" action="<%= request.getContextPath() %>/createAccount.jsp" method="get">
                 <button class="btn btn-outline-success" type="submit">Register</button>
