@@ -48,16 +48,14 @@
         </div>
         <div class="mb-3">
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="autoSizingCheck">
-                <label class="form-check-label" for="autoSizingCheck">
+                <input class="form-check-input is-invalid" type="checkbox" value="" id="invalidCheck3" aria-describedby="invalidCheck3Feedback" required>
+                <label class="form-check-label" for="invalidCheck3">
                     Agree to terms and conditions
                 </label>
-                <div class="invalid-feedback">
+                <div id="invalidCheck3Feedback" class="invalid-feedback">
                     You must agree before submitting.
                 </div>
             </div>
-            <br>
-        </div>
         <button class="btn btn-outline-secondary" type="submit" id="button-addon1">Send</button>
     </form>
 </div>

@@ -25,7 +25,7 @@
                         <div class="card-body p-5">
                             <h2 class="text-uppercase text-center mb-5">Create an account</h2>
 
-                            <form action="<%= request.getContextPath() %>/booking/insert" method="post">
+                            <form action="<%= request.getContextPath() %>/customer/add" method="post">
 
                                 <div class="form-outline mb-4">
                                     <input type="text" id="form3Example1cg" class="form-control form-control-lg" name="firstname" />
@@ -46,7 +46,7 @@
                                 </div>
 
                                 <div class="form-outline mb-4">
-                                    <input type="password" id="form3Example4cdg" class="form-control form-control-lg" />
+                                    <input type="password" id="form3Example4cdg" class="form-control form-control-lg" name="confirmPassword" />
                                     <label class="form-label" for="form3Example4cdg">Repeat your password</label>
                                 </div>
 
@@ -58,7 +58,7 @@
                                 </div>
 
                                 <div class="d-flex justify-content-center">
-                                    <button type="button"
+                                    <button type="submit"
                                             class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Register</button>
                                 </div>
 

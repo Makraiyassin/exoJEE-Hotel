@@ -22,14 +22,19 @@ public class ServletInsertCustomer extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String firstName = request.getParameter("first_name");
-        String lastName = request.getParameter("last_name");
+        String firstName = request.getParameter("firstname");
+        String lastName = request.getParameter("lastname");
         String email = request.getParameter("email");
         String password = request.getParameter("password");
+        String confirmPassword = request.getParameter("confirmPassword");
 
-        Customer toInsert = new Customer(firstName, lastName, email, password);
-        service.insert(toInsert);
+        if (confirmPassword.equals(password) && firstName != null && lastName != null && email != null) {
+            Customer toInsert = new Customer(firstName, lastName, email, password);
+            service.insert(toInsert);
 
-        response.sendRedirect(request.getContextPath() + "/myProfile.jsp");
+            response.sendRedirect(request.getContextPath() + "/myProfile.jsp");
+        }
+        else
+            response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
     }
 }
