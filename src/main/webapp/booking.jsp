@@ -16,14 +16,14 @@
 <%@include file="assets/include/navBar.jsp"%>
 
 <div class="input-group mb-3">
-    <form action="<%= request.getContextPath() %>/book" method="post">
+    <form action="<%= request.getContextPath() %>/room/search" method="get">
         <div class="mb-3">
             <label for="formGroupExampleInput" class="form-label">Capacity</label>
             <input type="number" min="1" max="6"  class="form-control" id="formGroupExampleInput" placeholder="1" name="capacity">
         </div>
         <div class="mb-3">
             <label for="inputState" class="form-label">Room's type</label>
-            <select id="inputState" class="form-select">
+            <select id="inputState" class="form-select" name="type">
                 <option selected>Choose...</option>
                 <option>Basic</option>
                 <option>Medior</option>
