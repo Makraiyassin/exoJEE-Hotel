@@ -14,7 +14,6 @@ public class deleteBookingServlet extends HttpServlet {
     private final BookingService bookingService= BookingService.getInstance();
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        System.out.println("==========================");
         int id = Integer.parseInt(request.getParameter("id"));
         bookingService.delete(id);
         response.sendRedirect(request.getContextPath()+"/myProfile?id="+request.getParameter("customer"));

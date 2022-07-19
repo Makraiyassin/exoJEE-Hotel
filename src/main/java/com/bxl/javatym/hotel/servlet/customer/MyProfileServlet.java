@@ -9,15 +9,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.List;
 
-@WebServlet(name = "ServletGetOneCustomer", value = "/myProfile")
-public class myProfilServlet extends HttpServlet {
-
-    private final CustomerService customerService = CustomerService.getInstance();
-
+@WebServlet(name = "MyProfileServlet", value = "/myProfile")
+public class MyProfileServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        CustomerService customerService = CustomerService.getInstance();
         Customer customer = customerService.getOne(Integer.parseInt(request.getParameter("id")));
         request.setAttribute("customer", customer);
         request.getRequestDispatcher("/myProfile.jsp").forward(request,response);
