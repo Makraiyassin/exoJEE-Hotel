@@ -25,22 +25,20 @@ public class InsertBookingServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//        Customer customer = CustomerService.getInstance().getOne(Integer.parseInt(request.getParameter("customer_id")));
-        Customer customer = CustomerService.getInstance().getOne(1);
-        Room room  = RoomService.getInstance().getOne(Integer.parseInt(request.getParameter("room_id")));
+        Customer customer = CustomerService.getInstance().getOne(Integer.parseInt(request.getParameter("customerId")));
+        Room room  = RoomService.getInstance().getOne(Integer.parseInt(request.getParameter("roomId")));
 
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d-MMM-yyyy");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
         String dateBeginString = request.getParameter("dateBegin");
-        String dateEnddString = request.getParameter("dateEnd");
-
-        System.out.println(dateBeginString);
+        String dateEndString = request.getParameter("dateEnd");
 
         LocalDate dateBegin = LocalDate.parse(dateBeginString, formatter);
-        LocalDate dateEnd = LocalDate.parse(dateEnddString, formatter);
+        LocalDate dateEnd = LocalDate.parse(dateEndString, formatter);
 
 
         Booking toInsert = new Booking(customer,room,dateBegin,dateEnd);
+        System.out.println(toInsert);
         bookingService.insert(toInsert);
         response.sendRedirect(request.getContextPath());
     }
