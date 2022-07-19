@@ -21,7 +21,7 @@ public class CustomerService {
     private final EntityManager manager = EMFWebListener.createEntityManager();
 
     public List<Customer> getAll(){
-        return manager.createNamedQuery("c_get_all").getResultList();
+        return manager.createNamedQuery("c_get_all", Customer.class).getResultList();
     }
 
     public Customer getOne(int id){

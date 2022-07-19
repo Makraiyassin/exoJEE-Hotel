@@ -14,13 +14,16 @@
     <%@include file="assets/include/toADD.jsp"%>
 </head>
 <body>
-<%--<%@include file="assets/include/navBar.jsp"%>--%>
+<%@include file="assets/include/navBar.jsp"%>
 
 <%
     Customer customer = (Customer) request.getAttribute("customer");
     List<Booking> bookingList = customer.getBookings();
 %>
-<img src="https://www.pngmart.com/files/21/Account-Avatar-Profile-PNG-Photo.png" alt="img profil" class="mx-auto">
+<div class="image-profil">
+    <img src="https://www.pngmart.com/files/21/Account-Avatar-Profile-PNG-Photo.png" alt="img profil">
+</div>
+<h5 class="reservation-h5">reservations:</h5>
 <div id="main">
     <%
         for (Booking booking : bookingList ) {
@@ -28,10 +31,10 @@
     <div class="card" style="width: 18rem;">
         <img src="<%= booking.getRoom().getImg()%>" class="img5">
         <div class="card-body text-center">
-            <h5 class="card-title"><%= booking.getRoom().getType()%></h5>
-            <p>room number: <%= booking.getRoom().getId()%></p>
+            <h5 class="card-title"> du <%=booking.getBeginDate()%> au <%=booking.getEndDate()%></h5>
+            <p><%= booking.getRoom().getType()%> n°<%= booking.getRoom().getId()%></p>
             <p>price: <%= booking.getRoom().getPrice()%>€</p>
-<%--            <a href="<%=request.getContextPath()%>/room/getOne?id=<%=booking.getRoom().getId()%>" class="btn btn-primary">Book now</a>--%>
+            <a href="<%=request.getContextPath()%>/booking/delete?id=<%=booking.getId()%>&customer=<%=booking.getCustomer().getId()%>" class="btn btn-primary">Cancel</a>
         </div>
     </div>
     <%}%>

@@ -22,3 +22,16 @@
 .img5 {
     height: 187px;
 }
+
+.image-profil{
+    width: 100px;
+    margin: 1% auto ;
+}
+.image-profil img{
+    width: 100px;
+}
+
+.reservation-h5{
+    text-align: center;
+}
+

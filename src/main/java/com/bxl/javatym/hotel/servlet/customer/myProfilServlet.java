@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(name = "ServletGetOneCustomer", value = {"/myProfile","/myProfile.jsp"})
+@WebServlet(name = "ServletGetOneCustomer", value = "/myProfile")
 public class myProfilServlet extends HttpServlet {
 
     private final CustomerService customerService = CustomerService.getInstance();
