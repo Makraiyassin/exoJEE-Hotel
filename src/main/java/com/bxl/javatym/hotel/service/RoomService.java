@@ -1,14 +1,12 @@
 package com.bxl.javatym.hotel.service;
 
 import com.bxl.javatym.hotel.listeners.EMFWebListener;
-import com.bxl.javatym.hotel.models.Booking;
 import com.bxl.javatym.hotel.models.Room;
 import com.bxl.javatym.hotel.models.TypeEnum;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityNotFoundException;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 

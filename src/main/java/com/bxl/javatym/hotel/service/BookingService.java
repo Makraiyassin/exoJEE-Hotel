@@ -35,11 +35,12 @@ public class BookingService {
         manager.merge(booking);
         manager.getTransaction().commit();
     }
-    public void delette(int id) {
+    public void delete(int id) {
         manager.getTransaction().begin();
-        Booking bookingToDelette = getOne(id);
-        manager.remove(bookingToDelette);
+        Booking bookingToDelete = getOne(id);
+        manager.remove(bookingToDelete);
         manager.getTransaction().commit();
+
     }
     public boolean existsById(int id){
         return getOne(id) != null;
