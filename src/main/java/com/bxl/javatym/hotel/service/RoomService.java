@@ -22,7 +22,6 @@ public class RoomService {
     }
 
     private RoomService() {
-
     }
 
     private final EntityManager manager = EMFWebListener.createEntityManager();
@@ -54,11 +53,9 @@ public class RoomService {
         List<Room> result = new ArrayList<>();
         List<Room> allRooms = getAll();
 
-
         for (Room room : allRooms) {
             // If the room is too small, we skip it.
             if (room.getCapacity() < capacity) { continue; }
-
 
             // If the room is of the wrong type, we skip it.
             if (room.getType() != type) { continue; }
@@ -89,5 +86,4 @@ public class RoomService {
     public boolean existsById(int id){
         return getOne(id) != null;
     }
-
 }

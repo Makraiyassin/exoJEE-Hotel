@@ -65,7 +65,7 @@ public class Room {
             }
 
             // If the checkin happens before the end date of the previously booked booking AND the checkout happens after the beginning of that previously booked booking
-            if(checkinDate.compareTo(booking.getEndDate()) < 0 && checkoutDate.compareTo(booking.getBeginDate()) > 0){
+            if( checkinDate.isBefore(booking.getEndDate()) && booking.getBeginDate().isBefore(checkoutDate) ) {
                 return false;
             }
         }

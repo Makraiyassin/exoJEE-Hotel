@@ -20,8 +20,8 @@
     %>
     <div class="card" style="width: 18rem;">
         <img src="<%= room.getImg()%>" class="img5">
-        <div class="card-body">
-            <h5 class="card-title"></h5>
+        <div class="card-body text-center">
+            <h5 class="card-title"><%= room.getType()%></h5>
             <p>room number: <%= room.getId()%></p>
             <p>price: <%= room.getPrice()%>€</p>
             <p>capacity: <%= room.getCapacity()%> persons</p>
