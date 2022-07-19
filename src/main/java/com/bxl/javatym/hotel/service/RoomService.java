@@ -3,6 +3,7 @@ package com.bxl.javatym.hotel.service;
 import com.bxl.javatym.hotel.listeners.EMFWebListener;
 import com.bxl.javatym.hotel.models.Room;
 import com.bxl.javatym.hotel.models.TypeEnum;
+import org.hibernate.type.EnumType;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityNotFoundException;
@@ -46,7 +47,7 @@ public class RoomService {
         manager.getTransaction().commit();
     }
 
-    public List<Room> search(int capacity, TypeEnum type, LocalDate checkin, LocalDate checkout, int priceMax) {
+    public List<Room> search(int capacity, TypeEnum type, LocalDate checkin, LocalDate checkout, int priceMin, int priceMax) {
         List<Room> result = new ArrayList<>();
         List<Room> allRooms = getAll();
 
@@ -55,7 +56,10 @@ public class RoomService {
             if (room.getCapacity() < capacity) { continue; }
 
             // If the room is of the wrong type, we skip it.
-            if (room.getType() != type) { continue; }
+            if (room.getType() != type && type != TypeEnum.DEFAULT) { continue; }
+
+            // If the room is too expensive, we skip it.
+            if (room.getPrice() < priceMin) { continue; }
 
             // If the room is too expensive, we skip it.
             if (room.getPrice() > priceMax) { continue; }
