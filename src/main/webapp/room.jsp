@@ -15,7 +15,6 @@
 
 <%
     Room room = (Room) request.getAttribute("room");
-    List<Customer> customerList = (List<Customer>) request.getAttribute("customerList");
 %>
 
 <div class="w-75 mx-auto">
@@ -51,6 +50,19 @@
         </div>
         <div class="col-12 mx-auto">
             <button type="submit" class="btn btn-primary">Book</button>
+            <div class="toast-container position-fixed bottom-0 end-0 p-3">
+                <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                    <div class="toast-header">
+                        <img src="..." class="rounded me-2" alt="...">
+                        <strong class="me-auto">Innov Hotel</strong>
+                        <small>11 mins ago</small>
+                        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                    </div>
+                    <div class="toast-body">
+                        Your reservation is done.
+                    </div>
+                </div>
+            </div>
         </div>
     </form>
 </div>
