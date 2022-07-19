@@ -15,7 +15,6 @@
 
 <%
     Room room = (Room) request.getAttribute("room");
-    List<Customer> customerList = (List<Customer>) request.getAttribute("customerList");
 %>
 
 <div class="w-75 mx-auto">
@@ -40,6 +39,14 @@
                 <span class="input-group-text" id="to">to</span>
                 <input type="date" class="form-control" name="dateEnd" required>
             </div>
+            <%
+                String error = request.getAttribute("error") != null ? (String) request.getAttribute("error") : null;
+                if(error != null){
+            %>
+            <div class="input-group mb-3">
+                <span class="text-danger" id="error"><%=error%></span>
+            </div>
+            <%}%>
         </div>
         <div class="col-12 mx-auto">
             <button type="submit" class="btn btn-primary">Book</button>

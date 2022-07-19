@@ -9,11 +9,12 @@
 <html>
 <head>
     <title>Booking</title>
-    <%@include file="assets/include/toADD.jsp"%>
+    <%@include file="assets/include/toADD.jsp" %>
 </head>
 <body>
 
-<%@include file="assets/include/navBar.jsp"%>
+    <%@include file="assets/include/navBar.jsp" %>
+
 
 <div class="input-group mb-3">
     <form action="<%= request.getContextPath() %>/room/search" method="get">
@@ -63,5 +64,6 @@
 </div>
     <script src="assets/js/main.js" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+>>>>>>> 7838161df244239e2e41cc88f1a3c0068f3e0ee2
 </body>
 </html>
