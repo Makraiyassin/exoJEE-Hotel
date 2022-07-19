@@ -9,21 +9,22 @@
 <html>
 <head>
     <title>Booking</title>
-    <%@include file="assets/include/toADD.jsp"%>
+    <%@include file="assets/include/toADD.jsp" %>
 </head>
 <body>
 
-<%@include file="assets/include/navBar.jsp"%>
+    <%@include file="assets/include/navBar.jsp" %>
+
 
 <div class="input-group mb-3">
-    <form action="<%= request.getContextPath() %>/book" method="post">
+    <form action="<%= request.getContextPath() %>/room/search" method="get">
         <div class="mb-3">
             <label for="formGroupExampleInput" class="form-label">Capacity</label>
             <input type="number" min="1" max="6"  class="form-control" id="formGroupExampleInput" placeholder="1" name="capacity">
         </div>
         <div class="mb-3">
             <label for="inputState" class="form-label">Room's type</label>
-            <select id="inputState" class="form-select">
+            <select id="inputState" class="form-select" name="type">
                 <option selected>Choose...</option>
                 <option>Basic</option>
                 <option>Medior</option>
@@ -58,5 +59,6 @@
 </div>
     <script src="assets/js/main.js" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+>>>>>>> 7838161df244239e2e41cc88f1a3c0068f3e0ee2
 </body>
 </html>

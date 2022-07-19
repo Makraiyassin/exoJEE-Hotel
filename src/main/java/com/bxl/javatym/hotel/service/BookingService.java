@@ -12,7 +12,6 @@ import java.util.List;
 public class BookingService {
     private static BookingService instance;
     public static BookingService getInstance(){
-        System.out.println("recup de l'instance du service");
         return instance == null ? instance = new BookingService() : instance;
     }
     private BookingService() {}
