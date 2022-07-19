@@ -17,14 +17,10 @@ public class ServletDeleteCustomer extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 //        request.getRequestDispatcher("/customer/add.jsp").forward(request,response);
-    }
-
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int id;
 
         try{
-            id = Integer.parseInt(request.getParameter("customer_id"));
+            id = Integer.parseInt(request.getParameter("id"));
             service.delete(id);
         }
         catch(NumberFormatException ex){
@@ -33,5 +29,10 @@ public class ServletDeleteCustomer extends HttpServlet {
 
 
         response.sendRedirect(request.getContextPath() + "/");
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
     }
 }

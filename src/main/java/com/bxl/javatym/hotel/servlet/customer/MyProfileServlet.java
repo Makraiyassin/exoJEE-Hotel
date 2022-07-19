@@ -12,9 +12,10 @@ import java.io.IOException;
 
 @WebServlet(name = "MyProfileServlet", value = "/myProfile")
 public class MyProfileServlet extends HttpServlet {
+    private final CustomerService customerService = CustomerService.getInstance();
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        CustomerService customerService = CustomerService.getInstance();
         Customer customer = customerService.getOne(Integer.parseInt(request.getParameter("id")));
         request.setAttribute("customer", customer);
         request.getRequestDispatcher("/myProfile.jsp").forward(request,response);
