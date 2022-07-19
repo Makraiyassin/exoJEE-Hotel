@@ -8,107 +8,115 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Contact us</title>
     <%@include file="assets/include/toADD.jsp"%>
 </head>
 <body>
 
 <%@include file="assets/include/navBar.jsp"%>
 
-<section class="mb-4">
+<div class="container">
+  <div class=" text-center mt-5 ">
 
-  <!--Section heading-->
-  <h2 class="h1-responsive font-weight-bold text-center my-4">Contact us</h2>
-  <!--Section description-->
-  <p class="text-center w-responsive mx-auto mb-5">Do you have any questions? Please do not hesitate to contact us directly. Our team will come back to you within
-    a matter of hours to help you.</p>
 
-  <div class="row">
-
-    <!--Grid column-->
-    <div class="col-md-9 mb-md-0 mb-5">
-      <form id="contact-form" name="contact-form" action="mail.php" method="POST">
-
-        <!--Grid row-->
-        <div class="row">
-
-          <!--Grid column-->
-          <div class="col-md-6">
-            <div class="md-form mb-0">
-              <input type="text" id="name" name="name" class="form-control">
-              <label for="name" class="">Your name</label>
-            </div>
-          </div>
-          <!--Grid column-->
-
-          <!--Grid column-->
-          <div class="col-md-6">
-            <div class="md-form mb-0">
-              <input type="text" id="email" name="email" class="form-control">
-              <label for="email" class="">Your email</label>
-            </div>
-          </div>
-          <!--Grid column-->
-
-        </div>
-        <!--Grid row-->
-
-        <!--Grid row-->
-        <div class="row">
-          <div class="col-md-12">
-            <div class="md-form mb-0">
-              <input type="text" id="subject" name="subject" class="form-control">
-              <label for="subject" class="">Subject</label>
-            </div>
-          </div>
-        </div>
-        <!--Grid row-->
-
-        <!--Grid row-->
-        <div class="row">
-
-          <!--Grid column-->
-          <div class="col-md-12">
-
-            <div class="md-form">
-              <textarea type="text" id="message" name="message" rows="2" class="form-control md-textarea"></textarea>
-              <label for="message">Your message</label>
-            </div>
-
-          </div>
-        </div>
-        <!--Grid row-->
-
-      </form>
-
-      <div class="text-center text-md-left">
-        <a class="btn btn-primary" onclick="document.getElementById('contact-form').submit();">Send</a>
-      </div>
-      <div class="status"></div>
+    <!--Google map-->
+    <div id="map-container-google-1" class="z-depth-1-half map-container">
+      <iframe src="https://maps.google.com/maps?q=brussels&t=&z=13&ie=UTF8&iwloc=&output=embed" width="400" height="280" frameborder="0"
+              style="border:0" allowfullscreen></iframe>
     </div>
-    <!--Grid column-->
 
-    <!--Grid column-->
-    <div class="col-md-3 text-center">
-      <ul class="list-unstyled mb-0">
-        <li><i class="fas fa-map-marker-alt fa-2x"></i>
-          <p>Brussels, CP 1030, Belgium</p>
-        </li>
+    <h1 >Contact Us</h1>
 
-        <li><i class="fas fa-phone mt-4 fa-2x"></i>
-          <p>+00 02 234 567 89</p>
-        </li>
-
-        <li><i class="fas fa-envelope mt-4 fa-2x"></i>
-          <p>contact@innovHotel.com</p>
-        </li>
-      </ul>
-    </div>
-    <!--Grid column-->
 
   </div>
 
-</section>
+
+  <div class="row ">
+    <div class="col-lg-7 mx-auto">
+      <div class="card mt-2 mx-auto p-4 bg-light">
+        <div class="card-body bg-light">
+
+          <div class = "container">
+            <form id="contact-form" role="form">
+
+
+
+              <div class="controls">
+
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="form_name">Firstname *</label>
+                      <input id="form_name" type="text" name="name" class="form-control" placeholder="Please enter your firstname *" required="required" data-error="Firstname is required.">
+
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="form_lastname">Lastname *</label>
+                      <input id="form_lastname" type="text" name="surname" class="form-control" placeholder="Please enter your lastname *" required="required" data-error="Lastname is required.">
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="form_email">Email *</label>
+                      <input id="form_email" type="email" name="email" class="form-control" placeholder="Please enter your email *" required="required" data-error="Valid email is required.">
+
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="form_need">Please specify your need *</label>
+                      <select id="form_need" name="need" class="form-control" required="required" data-error="Please specify your need.">
+                        <option value="" selected disabled>--Select Your Issue--</option>
+                        <option >Request Invoice for order</option>
+                        <option >Request order status</option>
+                        <option >Haven't received cashback yet</option>
+                        <option >Other</option>
+                      </select>
+
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <label for="form_message">Message *</label>
+                      <textarea id="form_message" name="message" class="form-control" placeholder="Write your message here." rows="4" required="required" data-error="Please, leave us a message."></textarea
+                      >
+                    </div>
+
+                  </div>
+
+
+                  <div class="col-md-12">
+
+                    <input type="submit" class="btn btn-success btn-send  pt-2 btn-block
+                            " value="Send Message" >
+
+                  </div>
+
+                </div>
+
+
+              </div>
+            </form>
+          </div>
+        </div>
+
+
+      </div>
+      <!-- /.8 -->
+
+    </div>
+    <!-- /.row-->
+
+  </div>
+</div>
+
+
+
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 
