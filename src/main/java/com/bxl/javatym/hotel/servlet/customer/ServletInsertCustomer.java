@@ -32,7 +32,7 @@ public class ServletInsertCustomer extends HttpServlet {
             Customer toInsert = new Customer(firstName, lastName, email, password);
             service.insert(toInsert);
 
-            response.sendRedirect(request.getContextPath() + "/myProfile.jsp");
+            response.sendRedirect(request.getContextPath() + "/myProfile?id="+toInsert.getId());
         }
         else
             response.setStatus(HttpServletResponse.SC_BAD_REQUEST);

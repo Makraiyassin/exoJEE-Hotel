@@ -6,9 +6,7 @@
 <html>
 <head>
     <title>Welcome</title>
-
     <%@include file="assets/include/toADD.jsp"%>
-    <%@include file="assets/include/favicon.jsp"%>
 </head>
 <body>
 
